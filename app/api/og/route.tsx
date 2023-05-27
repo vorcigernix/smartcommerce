@@ -7,9 +7,12 @@ const interRegular = fetch(new URL('./Inter-Regular.ttf', import.meta.url)).then
   res.arrayBuffer()
 );
 
-const interBold = fetch(new URL('./Inter-Bold.ttf', import.meta.url)).then((res) =>
-  res.arrayBuffer()
-);
+const interBold = fetch(
+  new URL(
+    'https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.13.1/Inter%20(web%20hinted%20latin)/Inter-Bold.woff',
+    import.meta.url
+  )
+).then((res) => res.arrayBuffer());
 
 export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
   try {
